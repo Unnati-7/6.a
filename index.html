@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bouncing Loader</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+    }
+
+    .loader span {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      animation: bounce 0.6s infinite ease-in-out;
+      background: linear-gradient(135deg, indigo, violet);
+      background-size: 200% 200%;
+      animation-name: bounce, rainbowShift;
+      animation-duration: 0.6s, 3s;
+      animation-iteration-count: infinite, infinite;
+      animation-timing-function: ease-in-out, linear;
+    }
+
+    .loader span:nth-child(2) {
+      animation-delay: 0.1s, 0s;
+    }
+    .loader span:nth-child(3) {
+      animation-delay: 0.2s, 0s;
+    }
+    .loader span:nth-child(4) {
+      animation-delay: 0.3s, 0s;
+    }
+    .loader span:nth-child(5) {
+      animation-delay: 0.4s, 0s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <span>W</span>
+    <span>A</span>
+    <span>I</span>
+    <span>T</span>
+  </div>
+</body>
+</html>
